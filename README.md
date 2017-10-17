@@ -24,6 +24,7 @@ How to Use
           i = 10;
           char* str = "hello world";
           log_info("%s, %d\", str, i);
+          log_fini();
           return 0
    }
 ```
