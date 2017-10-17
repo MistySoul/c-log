@@ -1,8 +1,8 @@
-** c-log **
+c-log
 ---
 a  log lib for C/C++ language
 
-** How to Use **
+How to Use
 ---
 ```C
    #include <stdio.h>
