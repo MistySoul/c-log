@@ -84,4 +84,20 @@ int log_info(const char* fmt, ...) __attribute__((format(printf, 1, 2)));
 int log_warn(const char* fmt, ...) __attribute__((format(printf, 1, 2)));
 int log_error(const char* fmt, ...) __attribute__((format(printf, 1, 2)));
 int log_fatal(const char* fmt, ...) __attribute__((format(printf, 1, 2)));
+
+#define PROGRAM_LOG_CLASS(className) static const char* s_logClassName = #className
+
+#define PROGRAM_LOG_DEBUG(format, ...) \
+	log_debug("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+#define PROGRAM_LOG_TRACE(format, ...) \
+	log_trace("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+#define PROGRAM_LOG_INFO(format, ...) \
+	log_info("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+#define PROGRAM_LOG_WARN(format, ...) \
+	log_warn("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+#define PROGRAM_LOG_ERROR(format, ...) \
+	log_error("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+#define PROGRAM_LOG_FATAL(format, ...) \
+	log_fatal("#%s::%s %d, "format"\n", s_logClassName, __FUNCTION__,__LINE__, ## __VA_ARGS__)
+
 #endif
