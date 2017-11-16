@@ -15,6 +15,7 @@ How to Use
    #endif
    
    #define DEFAULT_LOG_PATH "./log"
+   PROGRAM_LOG_CLASS(main.c);
    
    int main(){
           log_init(DEFAULT_LOG_PATH, "mylog", DEFAULT_LOG_LEVEL, C_TRUE, C_TRUE, 
@@ -23,7 +24,7 @@ How to Use
           int i;
           i = 10;
           char* str = "hello world";
-          log_info("%s, %d\", str, i);
+          PROGRAM_LOG_INFO("%s, %d\", str, i);
           log_fini();
           return 0
    }
