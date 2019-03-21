@@ -1,6 +1,6 @@
-c-log
+**CLog**
 ---
-a  log lib for C/C++ language on **Linux** Platform
+a  log module for C/C++ language
 
 How to Use
 ---
